@@ -1,6 +1,6 @@
 # eventql-crystal
 
-EventQL driver for Crystal. [eventql.io](http://eventql.io)
+EventQL driver for Crystal. [eventql.io](http://eventql.io)  
 Based on the official ruby driver ( https://github.com/eventql/eventql/tree/master/drivers/ruby )
 
 ## Installation
@@ -32,7 +32,3 @@ TODO: Write development instructions here
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create a new Pull Request
-
-## Contributors
-
-- [[metacortex]](https://github.com/metacortex) Jungwook Son - creator, maintainer
