@@ -1,1 +1,9 @@
+sudo: required
 language: crystal
+services:
+  - docker
+before_install:
+  - docker pull degola/eventql
+  - mkdir -p /var/evql
+  - docker run degola/eventql evqld --standalone --datadir /var/evql
+  
