@@ -47,11 +47,11 @@ module EventQL
     end
 
     def get_auth_token
-      @opts["auth_token"]
+      @opts["auth_token"]?
     end
 
     def has_auth_token?
-      !@opts["auth_token"].nil?
+      !@opts["auth_token"]?.nil?
     end
   end
 end

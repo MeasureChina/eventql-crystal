@@ -1,7 +1,7 @@
 require "./eventql/**"
 
 module EventQL
-  alias OptionValueType = String | Int32 | Nil
+  alias OptionValueType = String
   alias OptionType = Hash(String, OptionValueType)
   
   class Error < Exception; end

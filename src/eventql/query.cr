@@ -13,8 +13,8 @@ module EventQL
       headers = HTTP::Headers.new
       headers.add "Content-Type", "application/json"
 
-      if has_auth_token?
-        headers.add "Authorization", "Token #{get_auth_token}"
+      if @client.has_auth_token?
+        headers.add "Authorization", "Token #{@client.get_auth_token}"
       end
 
       http = HTTP::Client.new(@client.get_host, @client.get_port)
@@ -25,15 +25,15 @@ module EventQL
         format: "json"
       }.to_json
 
-      response = HTTP::Client.post("/api/v1/sql", headers, body)
+      response = http.post("/api/v1/sql", headers, body)
 
       response_json = JSON.parse(response.body) rescue nil
       if response_json && response_json["error"]?
-        raise QueryError.new(message: response_json["error"])
+        raise QueryError.new(message: response_json["error"].as_s)
       end
 
       if response_json.nil? || response.status_code != 200
-        raise Error.new(message: "HTTP ERROR (#{response.code}): #{response.body[0..128]}")
+        raise Error.new(message: "HTTP ERROR (#{response.status_code}): #{response.body[0..128]}")
       end
 
       response_json["results"]
