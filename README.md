@@ -1,7 +1,12 @@
 # eventql-crystal
 
-EventQL driver for Crystal. [eventql.io](http://eventql.io)  
-Based on the official ruby driver ( https://github.com/eventql/eventql/tree/master/drivers/ruby )
+EventQL driver for Crystal
+[eventql.io](http://eventql.io)
+
+
+Based on the official ruby driver
+https://github.com/eventql/eventql/tree/master/drivers/ruby
+
 
 ## Installation
 
