@@ -1,0 +1,19 @@
+name: eventql
+version: 0.1.0
+
+authors:
+  - metacortex <0@measurechina.cn>
+
+crystal: 0.21.1
+
+license: MIT
+
+# dependencies:
+#   db:
+#     github: crystal-lang/crystal-db
+#     version: ~>0.3.3
+
+# development_dependencies:
+#   mysql:
+#     github: crystal-lang/crystal-mysql
+#     version: 0.3.1
