@@ -17,17 +17,55 @@ dependencies:
     github: measurechina/eventql-crystal
 ```
 
+
 ## Usage
 
 ```crystal
 require "eventql-crystal"
+
+# init
+client = EventQL.connect({
+  "host" => "localhost",
+  "port" => "9175",
+  "database" => "sensors",
+})
+
+# insert rows
+body = [
+  {
+    database: "test",
+    table: "sensors",
+    data: {
+      time: Time.now.to_utc.to_s("%FT%XZ"),
+      session_id: "s1",
+      url: "/page1",
+    }
+  }
+].to_json
+
+result = client.insert!(body)
+
+# query
+query = client.query("SELECT COUNT(1) FROM sensors;")
+response = query.execute!
+
+# [{"type" => "table", "columns" => ["COUNT(1)"], "rows" => [["1"]]}]
+
+query = client.query("SELECT * FROM sensors;")
+response = query.execute!
+
+
 ```
 
-TODO: Write usage instructions here
 
-## Development
+## TODO:
+  - [ ] table create/drop/list
+  - [ ] table add_field/remove_field
+  - [ ] Time conversion util
+  - [ ] time zone util
+  - [ ] MapReduce query
+  - [ ] json mapping helper
 
-TODO: Write development instructions here
 
 ## Contributing
 
