@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MeasureChina/eventql-crystal.svg?branch=master)](https://travis-ci.org/MeasureChina/eventql-crystal)
+
 # eventql-crystal
 
 EventQL driver for Crystal ([eventql.io](http://eventql.io))
