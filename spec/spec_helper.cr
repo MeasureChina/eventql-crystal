@@ -1,5 +1,5 @@
 require "spec"
-require "../src/eventql"
+require "../src/eventql-crystal"
 require "json"
 
 TEST_DB_NAME = "test"
