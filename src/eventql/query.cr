@@ -5,7 +5,7 @@ module EventQL
     @client : Client
     @query_str : String
     @query_opts : OptionType
-    
+
     def initialize(@client, @query_str, @query_opts = OptionType.new)
     end
 
@@ -38,5 +38,10 @@ module EventQL
 
       response_json["results"]
     end
+
+    def to_sql
+      @query_str.strip
+    end
+
   end
 end
