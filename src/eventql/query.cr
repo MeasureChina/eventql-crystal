@@ -33,7 +33,7 @@ module EventQL
       end
 
       if response_json.nil? || response.status_code != 200
-        raise Error.new(message: "HTTP ERROR (#{response.status_code}): #{response.body[0..128]}")
+        raise Error.new(message: "EventQL: query error - #{response.body[0..128]}")
       end
 
       response_json["results"]

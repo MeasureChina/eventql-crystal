@@ -3,7 +3,7 @@ require "http/client"
 module EventQL
   class Client
     @opts : OptionType
-    
+
     def initialize(@opts = OptionType.new)
     end
 
@@ -18,19 +18,19 @@ module EventQL
     def insert!(body : String)
       headers = HTTP::Headers.new
       headers.add "Content-Type", "application/json"
-      
+
       if has_auth_token?
         headers.add "Authorization", "Token #{get_auth_token}"
       end
-      
+
       http = HTTP::Client.new(get_host, get_port)
-      
+
       response = http.post("/api/v1/tables/insert", headers, body)
-      
+
       if response.status_code == 201
         return true
       else
-        raise Error.new(message: "HTTP ERROR (#{response.status_code}): #{response.body[0..128]}")
+        raise Error.new(message: "EventQL: insert error - #{response.body[0..128]}")
       end
     end
 
