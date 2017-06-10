@@ -1,10 +1,10 @@
 name: eventql-crystal
-version: 0.1.0
+version: 0.1.1
 
 authors:
   - metacortex <0@measurechina.cn>
 
-crystal: 0.21.1
+crystal: 0.22.0
 
 license: MIT
 
